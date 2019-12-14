@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="372.0" prefWidth="619.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ChefEquipeController">
+   <children>
+      <TableView fx:id="tabChefEquipe" layoutX="194.0" layoutY="73.0" onMouseClicked="#rowsClick" prefHeight="247.0" prefWidth="401.0">
+        <columns>
+          <TableColumn fx:id="colNom" prefWidth="93.0" text="Nom" />
+          <TableColumn fx:id="colPren" prefWidth="100.0" text="Prenom" />
+            <TableColumn fx:id="colGrad" prefWidth="86.0" text="Grade" />
+            <TableColumn fx:id="colSps" prefWidth="119.0" text="Specialité" />
+            <TableColumn fx:id="colId" prefWidth="116.0" text="id" visible="false" />
+        </columns>
+      </TableView>
+      <JFXButton fx:id="btn_valid" layoutX="71.0" layoutY="272.0" onAction="#handValider" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: #4183d7;" text="Valider"  />
+      <JFXTextField fx:id="txt_tel" labelFloat="true" layoutX="34.0" layoutY="136.0" promptText="Tel" />
+      <JFXTextField fx:id="txt_email" labelFloat="true" layoutX="34.0" layoutY="197.0" promptText="Email" />
+      <Label fx:id="lb_idEqui" layoutX="75.0" layoutY="30.0" prefHeight="17.0" prefWidth="11.0" visible="false" />
+      <Label layoutX="186.0" layoutY="10.0" prefHeight="40.0" prefWidth="259.0" style="-fx-background-color: #eaeaea;" text="  Affectation d'un chef d'équipe">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

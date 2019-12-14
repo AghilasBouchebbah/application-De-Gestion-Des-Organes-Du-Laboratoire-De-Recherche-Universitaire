@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="DOCTORANT" prefHeight="457.0" prefWidth="781.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Doctorantcntrl">
+   <children>
+      <VBox layoutX="1.0" prefHeight="449.0" prefWidth="201.0" style="-fx-border-color: blue;">
+         <children>
+            <Label alignment="CENTER" prefHeight="55.0" prefWidth="185.0" text="Information Doctorant" textFill="#4183d9">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Separator prefHeight="0.0" prefWidth="150.0" />
+            <JFXTextField fx:id="txt_nom_d" focusColor="#191c22" prefHeight="40.0" promptText="Nom" unFocusColor="#4d4d4d" />
+            <JFXTextField fx:id="txt_pren_d" focusColor="#414654" prefHeight="40.0" promptText="Prenom">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin></JFXTextField>
+            <Separator prefWidth="200.0">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin></Separator>
+            <Label alignment="CENTER" prefHeight="17.0" prefWidth="199.0" text="These" textFill="#4183d9">
+               <font>
+                  <Font size="27.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+            <Separator prefWidth="200.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></Separator>
+            <JFXTextField fx:id="txt_inti_d" focusColor="#242836" prefHeight="40.0" promptText="Intitule">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></JFXTextField>
+            <JFXTextField fx:id="txt_dom_d" focusColor="#2d2f36" layoutX="10.0" layoutY="277.0" prefHeight="40.0" promptText="Domaine">
+               <VBox.margin>
+                  <Insets bottom="10.0" top="15.0" />
+               </VBox.margin></JFXTextField>
+            <JFXTextField fx:id="txt_respo_d" focusColor="#202536" prefHeight="40.0" promptText="Responsable">
+               <VBox.margin>
+                  <Insets bottom="-10.0" top="10.0" />
+               </VBox.margin></JFXTextField>
+            <JFXDatePicker fx:id="dt_sout_d" defaultColor="#575a6b" prefHeight="35.0" prefWidth="201.0" promptText="date soutenanace">
+               <VBox.margin>
+                  <Insets top="35.0" />
+               </VBox.margin></JFXDatePicker>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" />
+         </padding>
+         <effect>
+            <Glow level="0.24" />
+         </effect>
+      </VBox>
+      <TextField fx:id="txt_rech_d" layoutX="443.0" layoutY="62.0" prefHeight="25.0" prefWidth="330.0" promptText="recherche" />
+      <TableView fx:id="tabdoc" editable="true" layoutX="207.0" layoutY="101.0" onMouseClicked="#rowClick" prefHeight="304.0" prefWidth="572.0">
+         <columns>
+            <TableColumn fx:id="col_id_d" maxWidth="-1.0" minWidth="50.0" prefWidth="75.0" text="Id" visible="false">
+               <cellValueFactory>
+                  <PropertyValueFactory property="id_doc" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="col_nom_d" prefWidth="106.0" text=" nom prenom">
+               <cellValueFactory>
+                  <PropertyValueFactory property="nom_doc" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="col_inti_d" prefWidth="104.0" text="Intitulé these">
+               <cellValueFactory>
+                  <PropertyValueFactory property="inti_doc" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="col_dom_d" prefWidth="109.0" text="Domaine thses ">
+               <cellValueFactory>
+                  <PropertyValueFactory property="dom_doc" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="col_resp_d" minWidth="0.0" prefWidth="126.0" text="Responsable">
+               <cellValueFactory>
+                  <PropertyValueFactory property="respo_doc" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="col_date_sou_d" prefWidth="126.0" text="Date de soutnance">
+               <cellValueFactory>
+                  <PropertyValueFactory property="date_sou_doc" />
+               </cellValueFactory>
+            </TableColumn>
+         </columns>
+      </TableView>
+      <ImageView fitHeight="17.0" fitWidth="20.0" layoutX="418.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/closer-1297401_960_720.png" />
+         </image>
+      </ImageView>
+      <HBox layoutX="343.0" layoutY="405.0" prefHeight="39.0" prefWidth="301.0">
+         <children>
+            <Button fx:id="bnt_ajou_d" mnemonicParsing="false" onAction="#actionajouter" prefHeight="40.0" prefWidth="90.0" style="-fx-background-color: #4183d9; -fx-text-fill: #ffffff;" text="Ajouter">
+               <HBox.margin>
+                  <Insets right="15.0" top="8.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="bnt_modi_d" mnemonicParsing="false" onAction="#actionmodi" prefHeight="40.0" prefWidth="90.0" style="-fx-background-color: #4183d9 #4183d9; -fx-text-fill: #ffffff;" text="Modifier">
+               <HBox.margin>
+                  <Insets right="15.0" top="8.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="bnt_supp_d" mnemonicParsing="false" onAction="#actionsupprimer" prefHeight="40.0" prefWidth="90.0" style="-fx-background-color: #4183d9; -fx-text-fill: #ffffff;" text="Supprimer">
+               <HBox.margin>
+                  <Insets top="8.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <effect>
+            <Glow level="0.21" />
+         </effect>
+      </HBox>
+      <Button fx:id="bnt_annu_d" layoutX="207.0" layoutY="51.0" mnemonicParsing="false" onAction="#actionannuler" prefHeight="40.0" prefWidth="60.0" style="-fx-background-color: #4183d9; -fx-text-fill: #ffffff;" text="Vider ">
+         <effect>
+            <Glow level="0.23" />
+         </effect></Button>
+   </children>
+</AnchorPane>

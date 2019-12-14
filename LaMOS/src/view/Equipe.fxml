@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="equipe" prefHeight="457.0" prefWidth="781.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EquipeController">
+   <children>
+       <StackPane fx:id="caché1" prefHeight="457.0" prefWidth="781.0">
+   <children>
+      <Group fx:id="groupe1" StackPane.alignment="CENTER">
+         <StackPane.margin>
+            <Insets />
+         </StackPane.margin>
+         <children>
+            <AnchorPane fx:id="loadPane1" prefHeight="457.0" prefWidth="781.0" />
+            <JFXButton fx:id="btn_exit" layoutX="757.0" layoutY="5.0" onAction="#exitClick" onMouseEntered="#onHover" onMouseExited="#onDefault" prefHeight="25.0" prefWidth="12.0" text="X">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Group>
+            <Group fx:id="groupe2">
+               <children>
+                  <AnchorPane fx:id="loadpane2" prefHeight="372.0" prefWidth="619.0" />
+                  <JFXButton fx:id="btn_exit2" layoutX="595.0" onAction="#exitClick2" onMouseEntered="#onHover2" onMouseExited="#onDefault2" prefHeight="16.0" prefWidth="22.0" text="X" />
+               </children>
+            </Group>
+   </children>
+</StackPane>
+      <AnchorPane fx:id="blur" prefHeight="457.0" prefWidth="781.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <Label layoutX="13.0" layoutY="23.0" prefHeight="31.0" prefWidth="177.0" style="-fx-background-color: #f4f4f4;" text="Formulaire Equipe " textFill="#4183d7">
+               <font>
+                  <Font size="21.0" />
+               </font>
+               <effect>
+                  <Glow level="0.24" />
+               </effect>
+            </Label>
+             <JFXButton alignment="CENTER_RIGHT" layoutX="22.0" layoutY="295.0" onAction="#handajouter" prefHeight="30.0" prefWidth="89.0" style="-fx-background-color: #4183d7;" text="Ajouter" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+               <effect>
+                  <Glow level="0.23" />
+               </effect>
+      </JFXButton>
+      <JFXButton alignment="CENTER_RIGHT" layoutX="22.0" layoutY="344.0" onAction="#handmodifier" prefHeight="30.0" prefWidth="89.0" style="-fx-background-color: #4183d7;" text="Modifier" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+               <effect>
+                  <Glow level="0.22" />
+               </effect>
+      </JFXButton>
+      <JFXButton alignment="CENTER_RIGHT" layoutX="22.0" layoutY="388.0" onAction="#handsupprimer" prefHeight="30.0" prefWidth="89.0" style="-fx-background-color: #4183d7;" text="Supprimer" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+               <effect>
+                  <Glow level="0.23" />
+               </effect>
+      </JFXButton>
+      <ImageView fitHeight="17.0" fitWidth="16.0" layoutX="30.0" layoutY="302.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../mesImages/764773-200.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="30.0" layoutY="349.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../mesImages/Octicons-sync.svg.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="17.0" fitWidth="21.0" layoutX="22.0" layoutY="395.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../mesImages/121113.png" />
+         </image>
+      </ImageView>
+            <JFXTextField fx:id="txt_acro" labelFloat="true" layoutX="21.0" layoutY="156.0" prefHeight="25.0" prefWidth="160.0" promptText="Acrononyme" />
+            <JFXTextField fx:id="txt_intit" labelFloat="true" layoutX="21.0" layoutY="86.0" prefHeight="25.0" prefWidth="160.0" promptText="Intitule de l'équipe" />
+            <JFXButton layoutX="165.0" layoutY="275.0" onAction="#handVider" prefHeight="35.0" prefWidth="51.0" style="-fx-background-color: #4183d7;" text="Vider" textFill="WHITE" />
+            <Label alignment="CENTER" layoutX="409.0" layoutY="6.0" prefHeight="35.0" prefWidth="298.0" style="-fx-background-color: #f4f4f4;" text="Les équipes " textFill="#4183d7">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <effect>
+                  <Glow level="0.24" />
+               </effect>
+            </Label>
+            <TableView fx:id="tabEquipe" layoutX="246.0" layoutY="153.0" onMouseClicked="#rowClick" prefHeight="244.0" prefWidth="521.0">
+              <columns>
+                  <TableColumn fx:id="columnID" editable="false" prefWidth="95.0" resizable="false" sortable="false" text="ID" visible="false" />
+                <TableColumn fx:id="colNomE" prefWidth="250.0" text="Intitule De l'Equipe" />
+                  <TableColumn fx:id="colAcro" prefWidth="104.0" text="Acrononyme " />
+                  <TableColumn fx:id="colMail" prefWidth="174.0" text="Date Creation" />
+              </columns>
+            </TableView>
+            <Separator layoutX="232.0" layoutY="14.0" orientation="VERTICAL" prefHeight="426.0" prefWidth="7.0" />
+            <Label layoutX="350.0" layoutY="54.0" prefHeight="17.0" prefWidth="51.0" text=" Equipe :" />
+            <Label layoutX="351.0" layoutY="86.0" prefHeight="17.0" prefWidth="80.0" text=" Responsable :" />
+            <Label layoutX="354.0" layoutY="116.0" prefHeight="17.0" prefWidth="43.0" text=" Email :" />
+            <ImageView fx:id="img_respo" fitHeight="109.0" fitWidth="89.0" layoutX="246.0" layoutY="39.0" onMouseClicked="#imgOnclick" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/icons8_Male_User_100px_2.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lb_eq" layoutX="402.0" layoutY="54.0" prefHeight="17.0" prefWidth="256.0" />
+            <Label fx:id="lb_res" layoutX="437.0" layoutY="86.0" prefHeight="17.0" prefWidth="177.0" />
+            <Label fx:id="lb_mail" layoutX="396.0" layoutY="116.0" prefHeight="17.0" prefWidth="149.0" />
+            <JFXButton fx:id="boutonAjoutRespo" layoutX="558.0" layoutY="402.0" onAction="#btn_ajoutrespo" prefHeight="35.0" prefWidth="160.0" style="-fx-background-color: #4183d7;" text="Affecter Un Chef d'Equipe" textFill="WHITE" />
+            <JFXButton layoutX="321.0" layoutY="402.0" onAction="#btn_ajout_grp" prefHeight="35.0" prefWidth="160.0" style="-fx-background-color: #4183d7;" text="        Ajouter Des Groupes" textFill="WHITE" />
+            <ImageView fitHeight="25.0" fitWidth="21.0" layoutX="329.0" layoutY="409.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/764773-200.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="boutonModifRespo" layoutX="692.0" layoutY="50.0" onAction="#btn_modif_respo" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: #4183d7;" text="Modifier" textFill="WHITE" />
+            <JFXButton fx:id="boutonSuppRespo" layoutX="692.0" layoutY="82.0" onAction="#btn_supp_respo" style="-fx-background-color: #4183d7;" text="Supprimer" textFill="WHITE" />
+            <Label layoutX="569.0" layoutY="116.0" text="Tel :" />
+            <Label fx:id="lb_tel" layoutX="597.0" layoutY="116.0" prefHeight="17.0" prefWidth="138.0" />
+            <JFXDatePicker fx:id="dateCrea" defaultColor="#4183d7" layoutX="16.0" layoutY="216.0" promptText="Date creation" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

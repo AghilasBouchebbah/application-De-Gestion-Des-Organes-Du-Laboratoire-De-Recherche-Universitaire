@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="publication" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="455.0" prefWidth="774.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PublicationController">
+   <children>
+      <AnchorPane layoutX="83.0" layoutY="14.0" prefHeight="135.0" prefWidth="608.0" style="-fx-border-color: grey;">
+         <children>
+            <ImageView fx:id="img_publication" fitHeight="123.0" fitWidth="142.0" layoutX="4.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/icon_webstore.jpg" />
+               </image></ImageView>
+            <Label fx:id="titre_publication" layoutX="205.0" layoutY="5.0" prefHeight="32.0" prefWidth="381.0" text="Titre">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="auteur_publication" layoutX="205.0" layoutY="51.0" prefHeight="32.0" prefWidth="292.0" text="Auteur" />
+            <Label fx:id="date_publication" layoutX="205.0" layoutY="89.0" prefHeight="32.0" prefWidth="135.0" text="Date" />
+         </children>
+         <effect>
+            <Glow level="0.25" />
+         </effect>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </AnchorPane>
+      <TableView fx:id="table_pub" layoutX="305.0" layoutY="207.0" onMouseClicked="#rowClick" prefHeight="234.0" prefWidth="453.0">
+        <columns>
+          <TableColumn fx:id="Titre" prefWidth="96.0" text="Titre" />
+          <TableColumn fx:id="Auteur" prefWidth="109.0" text="Auteur" />
+            <TableColumn fx:id="Nombre_page" prefWidth="130.0" text="Type" />
+            <TableColumn fx:id="Date_pub" prefWidth="127.0" text="date-pub" />
+            <TableColumn fx:id="photo_pub" prefWidth="75.0" text="photo" visible="false" />
+            <TableColumn fx:id="id" prefWidth="75.0" text="id" visible="false" />
+        </columns>
+      </TableView>
+      <AnchorPane layoutX="14.0" layoutY="165.0" prefHeight="276.0" prefWidth="276.0" style="-fx-border-color: grey;">
+         <children>
+            <JFXDatePicker fx:id="date_pub" defaultColor="#398bdd" layoutX="29.0" layoutY="151.0" prefHeight="25.0" prefWidth="170.0" promptText="Date" />
+            <JFXTextField fx:id="titre_pub" labelFloat="true" layoutX="28.0" layoutY="27.0" prefHeight="18.0" prefWidth="170.0" promptText="Titre" />
+            <JFXTextField fx:id="nbrPage" labelFloat="true" layoutX="28.0" layoutY="113.0" prefHeight="25.0" prefWidth="170.0" promptText="Type" />
+            <JFXTextField fx:id="auteur_pub" labelFloat="true" layoutX="28.0" layoutY="70.0" prefHeight="25.0" prefWidth="170.0" promptText="Auteur" />
+            <JFXButton fx:id="loadImg" layoutX="184.0" layoutY="196.0" onAction="#loadClick" prefHeight="25.0" prefWidth="51.0" style="-fx-background-color: #c9c9c9;" text="Parcourir">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </JFXButton>
+            <HBox layoutX="21.0" layoutY="233.0" prefHeight="32.0" prefWidth="235.0">
+               <children>
+                  <JFXButton fx:id="btn_supp_pub" onAction="#suprimerClick" prefHeight="22.0" prefWidth="74.0" style="-fx-background-color: #4183d7;" text="Supprimer" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="btn_ajout_pub" onAction="#ajoutClick" prefHeight="25.0" prefWidth="71.0" style="-fx-background-color: #4183d7;" text="Ajouter" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                  <JFXButton onAction="#modifierClick" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: #4183d7;" text="Modifier" textFill="WHITE" />
+               </children>
+            </HBox>
+            <JFXTextField fx:id="imageUrl" layoutX="31.0" layoutY="190.0" prefHeight="25.0" prefWidth="135.0" promptText="Image" />
+         </children>
+         <effect>
+            <Glow level="0.25" />
+         </effect>
+      </AnchorPane>
+      <TextField fx:id="txt_rech_p" layoutX="367.0" layoutY="169.0" prefHeight="13.0" prefWidth="235.0" promptText="recherche par auteur" />
+      <ImageView fitHeight="18.0" fitWidth="16.0" layoutX="340.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/closer-1297401_960_720.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="457.0" prefWidth="781.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewlisteManifestationController">
+    
+       <children>
+
+         <StackPane fx:id="caché1" prefHeight="457.0" prefWidth="900.0">
+   <children>
+      <Group StackPane.alignment="CENTER">
+         <StackPane.margin>
+            <Insets />
+         </StackPane.margin>
+         <children>
+            <AnchorPane fx:id="loadPane1" layoutX="137.0" prefHeight="429.0" prefWidth="597.0" />
+            <JFXButton fx:id="btn_exit" layoutX="640.0" onAction="#exitClick" onMouseEntered="#onHover" onMouseExited="#onDefault" prefHeight="25.0" prefWidth="12.0" text="X">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Group>
+   </children>
+</StackPane>
+<AnchorPane fx:id="blur" prefHeight="457.0" prefWidth="781.0">
+    
+       <children>
+      <TableView fx:id="listeManifestation" editable="true" layoutX="311.0" layoutY="76.0" prefHeight="337.0" prefWidth="461.0">
+        <columns>
+            <TableColumn fx:id="colidManifest" prefWidth="88.0" text="idManifest" visible="false" />
+          <TableColumn fx:id="colType_manif" prefWidth="92.0" text="Type_Manif" />
+            <TableColumn fx:id="colintitule" prefWidth="71.0" text="Intitulé" />
+            <TableColumn fx:id="collieu_org" prefWidth="81.0" text="Lieu_org" />
+            <TableColumn fx:id="colheure_org" minWidth="0.0" prefWidth="78.0" text="heure_org" />
+            <TableColumn fx:id="coldate_org" minWidth="0.0" prefWidth="75.0" text="Date_org" />
+            <TableColumn fx:id="colresume" minWidth="0.0" prefWidth="63.0" text="Resumé" />
+        </columns>
+      </TableView>
+      <Separator layoutX="295.0" orientation="VERTICAL" prefHeight="457.0" prefWidth="21.0" />
+      <Label alignment="CENTER" layoutX="-10.0" layoutY="15.0" prefHeight="27.0" prefWidth="325.0" text="Détails Des Manifestations Scientifique">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+               <effect>
+                  <Glow level="0.23" />
+               </effect>
+      </Label>
+      <JFXTextField fx:id="Intitulé" labelFloat="true" layoutX="14.0" layoutY="109.0" prefHeight="30.0" prefWidth="174.0" promptText="Intitulé">
+         <font>
+            <Font name="Segoe UI" size="12.0" />
+         </font>
+               <effect>
+                  <Glow level="0.23" />
+               </effect>
+      </JFXTextField>
+      <JFXTextField fx:id="lieu_org" labelFloat="true" layoutX="14.0" layoutY="157.0" prefHeight="28.0" prefWidth="174.0" promptText="Lieu d'organisation">
+         <font>
+            <Font name="Segoe UI" size="12.0" />
+         </font>
+               <effect>
+                  <Glow level="0.23" />
+               </effect>
+      </JFXTextField>
+      <JFXTextArea fx:id="resume" labelFloat="true" layoutX="15.0" layoutY="300.0" prefHeight="41.0" prefWidth="174.0" promptText="Résumé">
+               <effect>
+                  <Glow level="0.23" />
+               </effect></JFXTextArea>
+      <JFXDatePicker fx:id="date_org" defaultColor="#4183d7" layoutX="15.0" layoutY="259.0" prefHeight="25.0" prefWidth="174.0" promptText="Date d'organisation">
+               <effect>
+                  <Glow level="0.23" />
+               </effect></JFXDatePicker>
+      <Separator layoutY="13.0" prefHeight="3.0" prefWidth="304.0" />
+      <Separator layoutX="-2.0" layoutY="49.0" prefHeight="3.0" prefWidth="304.0" />
+      <Label alignment="CENTER" layoutX="399.0" layoutY="7.0" prefHeight="28.0" prefWidth="291.0" text="Liste Des Manifestations Scientifique">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+               <effect>
+                  <Glow level="0.23" />
+               </effect>
+      </Label>
+      <JFXButton layoutX="660.0" layoutY="42.0" onAction="#handReferch" prefHeight="30.0" prefWidth="97.0" style="-fx-background-color: #e0d8d8;" text="     Actualiser">
+         <font>
+            <Font name="Segoe UI" size="13.0" />
+         </font>
+               <effect>
+                  <Glow level="0.23" />
+               </effect>
+      </JFXButton>
+      <JFXTextField fx:id="SearchBox" layoutX="338.0" layoutY="45.0" onInputMethodTextChanged="#SearchUser" onKeyReleased="#SearchUser" prefHeight="25.0" prefWidth="143.0" promptText=" Rechercher ici" />
+      <ImageView fitHeight="17.0" fitWidth="14.0" layoutX="322.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../mesImages/closer-1297401_960_720.png" />
+         </image>
+      </ImageView>
+      <JFXButton alignment="CENTER_RIGHT" layoutX="11.0" layoutY="416.0" onAction="#handajouter" prefHeight="30.0" prefWidth="74.0" style="-fx-background-color: #4183d7;" text="Ajouter" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+               <effect>
+                  <Glow level="0.23" />
+               </effect>
+      </JFXButton>
+      <JFXButton alignment="CENTER_RIGHT" layoutX="98.0" layoutY="416.0" onAction="#handmodifier" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #4183d7;" text="Modifier" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+               <effect>
+                  <Glow level="0.22" />
+               </effect>
+      </JFXButton>
+      <JFXButton alignment="CENTER_RIGHT" layoutX="189.0" layoutY="416.0" onAction="#handsupprimer" prefHeight="30.0" prefWidth="97.0" style="-fx-background-color: #4183d7;" text="Supprimer" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+               <effect>
+                  <Glow level="0.23" />
+               </effect>
+      </JFXButton>
+      <ImageView fitHeight="17.0" fitWidth="16.0" layoutX="15.0" layoutY="423.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../mesImages/764773-200.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="102.0" layoutY="421.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../mesImages/Octicons-sync.svg.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="192.0" layoutY="419.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../mesImages/121113.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="668.0" layoutY="415.0" onAction="#handajoutpartenaire" prefHeight="30.0" prefWidth="104.0" style="-fx-background-color: #e0d8d8;" text="Ajout-partenaire">
+               <effect>
+                  <Glow level="0.23" />
+               </effect></JFXButton>
+      <JFXComboBox fx:id="type_manifest" layoutX="14.0" layoutY="62.0" prefHeight="28.0" prefWidth="174.0" promptText="Type_Manifestation">
+               <effect>
+                  <Glow level="0.15" />
+               </effect></JFXComboBox>
+      <JFXTimePicker fx:id="heure_org" defaultColor="#4183d7" layoutX="15.0" layoutY="210.0" prefHeight="25.0" prefWidth="174.0" promptText="Heure d'organisation">
+               <effect>
+                  <Glow level="0.23" />
+               </effect></JFXTimePicker>
+      <JFXButton layoutX="159.0" layoutY="347.0" onAction="#browser" prefHeight="27.0" prefWidth="30.0" style="-fx-background-color: #4183d7;" text="Parcourir" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Bold" size="10.0" />
+         </font>
+      </JFXButton>
+      <ImageView fx:id="imageview" fitHeight="69.0" fitWidth="62.0" layoutX="222.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true" />
+      <JFXTextField fx:id="idmanifest" layoutX="14.0" layoutY="57.0" prefHeight="25.0" prefWidth="166.0" promptText="idmanifest" visible="false" />
+      <JFXButton layoutX="563.0" layoutY="415.0" onAction="#handvoirparticipe" prefHeight="30.0" prefWidth="97.0" style="-fx-background-color: #e0d8d8;" text="voir participant" textFill="#222222">
+               <effect>
+                  <Glow level="0.22" />
+               </effect></JFXButton>
+      <JFXTextField fx:id="imgurl" layoutX="16.0" layoutY="347.0" prefHeight="25.0" prefWidth="137.0" promptText="ImageUrl">
+               <effect>
+                  <Glow level="0.23" />
+               </effect></JFXTextField>
+            <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="668.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/480px-View-refresh.svg.png" />
+               </image>
+            </ImageView>
+       </children>
+    
+</AnchorPane>
+     </children>
+    
+</AnchorPane>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="partenaire" prefHeight="457.0" prefWidth="781.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Partenairecntrl">
+      <children>
+          
+           <StackPane fx:id="caché1" prefHeight="436.0" prefWidth="780.0">
+   <children>
+      <Group StackPane.alignment="CENTER">
+         <StackPane.margin>
+            <Insets />
+         </StackPane.margin>
+         <children>
+            <AnchorPane fx:id="loadPane1" layoutX="137.0" layoutY="-6.0" prefHeight="421.0" prefWidth="372.0" />
+            <JFXButton fx:id="btn_exit" layoutX="478.0" onAction="#exitClick" onMouseEntered="#onHover" onMouseExited="#onDefault" prefHeight="21.0" prefWidth="12.0" text="X">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Group>
+   </children>
+</StackPane>
+
+    <AnchorPane fx:id="blur" prefHeight="457.0" prefWidth="781.0">
+         <children>
+        <TableView fx:id="tabpart" layoutX="14.0" layoutY="157.0" onMouseClicked="#rowClick" prefHeight="239.0" prefWidth="769.0">
+            <columns>
+                <TableColumn fx:id="col_id" prefWidth="69.0" text="ID" visible="false">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="id" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="col_logo" prefWidth="75.0" text="logo" visible="false" />
+                <TableColumn fx:id="col_inti" prefWidth="130.0" text="intitule">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="inti" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="col_dom" prefWidth="162.0" text="Domaine">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="dom" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="col_type" prefWidth="90.0" text="Type">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="type" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="col_info" prefWidth="134.0" text="Contact">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="info" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="col_tarif" prefWidth="115.0" text="tarif">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="tarif" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="col_url_image" prefWidth="75.0" text="url_image" visible="false" />
+                <TableColumn fx:id="col_date" prefWidth="137.0" text="date-d'ajout">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="date" />
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+        <Button fx:id="bnt_ajou_p" layoutX="434.0" layoutY="405.0" mnemonicParsing="false" onAction="#actionajout" prefHeight="29.0" prefWidth="94.0" style="-fx-background-color: #4183d7;" text="    Ajouter" textFill="#f2efef">
+               <effect>
+                  <Glow level="0.23" />
+               </effect></Button>
+        <Button fx:id="bnt_supp_p" layoutX="663.0" layoutY="405.0" mnemonicParsing="false" onAction="#actionsupp" prefHeight="30.0" prefWidth="101.0" style="-fx-background-color: #4183d7;" text="      supprimer" textFill="#fcfafa">
+            <font>
+                <Font size="13.0" />
+            </font>
+               <effect>
+                  <Glow level="0.23" />
+               </effect>
+        </Button>
+        <Button fx:id="bnt_modi_p" layoutX="548.0" layoutY="404.0" mnemonicParsing="false" onAction="#actionmodi" prefHeight="29.0" prefWidth="94.0" style="-fx-background-color: #4183d7;" text="   modifier" textFill="#f5f2f2" AnchorPane.topAnchor="404.0">
+            <font>
+                <Font size="14.0" />
+            </font>
+               <effect>
+                  <Glow level="0.23" />
+               </effect>
+        </Button>
+        <TextField fx:id="txt_search_p" layoutX="63.0" layoutY="118.0" prefHeight="25.0" prefWidth="279.0" promptText="recherche" />
+        <Label fx:id="lb_close_part" alignment="CENTER" layoutX="749.0" layoutY="7.0" onMouseClicked="#close_p" prefHeight="14.0" prefWidth="24.0" text="X" textFill="#1b1a1a" visible="false">
+             <font>
+                      <Font size="20.0" />
+             </font>
+        </Label>
+      <Pane layoutX="13.0" layoutY="14.0" prefHeight="97.0" prefWidth="752.0" style="-fx-border-color: #000000;">
+         <children>
+              <ImageView fx:id="image" fitHeight="84.0" fitWidth="113.0" layoutX="578.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="lb_inti_part" layoutX="346.0" layoutY="23.0" prefHeight="55.0" prefWidth="160.0">
+                <font>
+                      <Font size="20.0" />
+                  </font>
+              </Label>
+              <Label layoutX="12.0" layoutY="-2.0" prefHeight="55.0" prefWidth="242.0" text="Partenaire">
+                  <font>
+                      <Font size="38.0" />
+                  </font>
+              </Label>
+         </children>
+               <effect>
+                  <Glow level="0.22" />
+               </effect>
+      </Pane>
+      <Button fx:id="btn_ref" contentDisplay="CENTER" layoutX="663.0" layoutY="116.0" minWidth="27.0" mnemonicParsing="false" onAction="#actionref" prefHeight="31.0" prefWidth="101.0" text="   Actualiser">
+               <effect>
+                  <Glow level="0.23" />
+               </effect></Button>
+      <ImageView fitHeight="16.0" fitWidth="23.0" layoutX="30.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/closer-1297401_960_720.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="23.0" fitWidth="26.0" layoutX="662.0" layoutY="120.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/480px-View-refresh.svg.png" />
+         </image>
+               <effect>
+                  <Glow level="0.18" />
+               </effect>
+      </ImageView>
+            <ImageView fitHeight="20.0" fitWidth="23.0" layoutX="444.0" layoutY="409.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/764773-200.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="20.0" fitWidth="23.0" layoutX="673.0" layoutY="409.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/121113.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="22.0" fitWidth="21.0" layoutX="554.0" layoutY="409.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/Octicons-sync.svg.png" />
+               </image>
+            </ImageView>
+         
+         
+     </children>
+ </AnchorPane>
+        
+    </children>
+</AnchorPane>

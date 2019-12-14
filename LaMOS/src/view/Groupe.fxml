@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="457.0" prefWidth="781.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GroupeController">
+     <children>
+      <StackPane fx:id="caché1" prefHeight="457.0" prefWidth="781.0">
+         <children>
+            <Group fx:id="groupe1" visible="false">
+               <children>
+                  <AnchorPane fx:id="loadpane1" prefHeight="457.0" prefWidth="781.0" />
+                  <JFXButton fx:id="btn_exit1" layoutX="710.0" layoutY="5.0" onAction="#exitClick1" onMouseEntered="#onHover" onMouseExited="#onDefault" prefHeight="25.0" prefWidth="12.0" text="X">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </Group>
+            <Group fx:id="groupe2" visible="false">
+               <children>
+                  <AnchorPane fx:id="loadpane2" prefHeight="387.0" prefWidth="580.0" />
+                  <JFXButton fx:id="btn_exit2" layoutX="540.0" layoutY="-35.0" onAction="#exitClick2" onMouseEntered="#onHover2" onMouseExited="#onDefault2" text="X">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </Group>
+         </children>
+      </StackPane>
+      <AnchorPane fx:id="blur1" prefHeight="457.0" prefWidth="781.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <Label layoutX="39.0" layoutY="26.0" prefHeight="31.0" prefWidth="177.0" style="-fx-background-color: #f4f4f4;" text="Formulaire Groupe" textFill="#4183d7">
+               <font>
+                  <Font size="21.0" />
+               </font>
+               <effect>
+                  <Glow level="0.24" />
+               </effect>
+            </Label>
+             <JFXButton alignment="CENTER_RIGHT" layoutX="38.0" layoutY="245.0" onAction="#handajouter" prefHeight="30.0" prefWidth="89.0" style="-fx-background-color: #4183d7;" text="Ajouter" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+               <effect>
+                  <Glow level="0.23" />
+               </effect>
+      </JFXButton>
+      <JFXButton alignment="CENTER_RIGHT" layoutX="38.0" layoutY="296.0" onAction="#handmodifier" prefHeight="30.0" prefWidth="89.0" style="-fx-background-color: #4183d7;" text="Modifier" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+               <effect>
+                  <Glow level="0.22" />
+               </effect>
+      </JFXButton>
+      <JFXButton alignment="CENTER_RIGHT" layoutX="38.0" layoutY="346.0" onAction="#handsupprimer" prefHeight="30.0" prefWidth="89.0" style="-fx-background-color: #4183d7;" text="Supprimer" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+               <effect>
+                  <Glow level="0.23" />
+               </effect>
+      </JFXButton>
+      <ImageView fitHeight="17.0" fitWidth="16.0" layoutX="46.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../mesImages/764773-200.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="46.0" layoutY="301.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../mesImages/Octicons-sync.svg.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="17.0" fitWidth="21.0" layoutX="38.0" layoutY="353.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../mesImages/121113.png" />
+         </image>
+      </ImageView>
+            <JFXTextField fx:id="txt_acro" labelFloat="true" layoutX="39.0" layoutY="162.0" prefHeight="25.0" prefWidth="160.0" promptText="Acrononyme" />
+            <JFXTextField fx:id="txt_intit" labelFloat="true" layoutX="39.0" layoutY="100.0" prefHeight="25.0" prefWidth="160.0" promptText="Intitule de groupe" />
+            <JFXButton layoutX="165.0" layoutY="217.0" onAction="#handVider" prefHeight="35.0" prefWidth="51.0" style="-fx-background-color: #4183d7;" text="Vider" textFill="WHITE" />
+            <Label alignment="CENTER" layoutX="357.0" layoutY="16.0" prefHeight="35.0" prefWidth="298.0" style="-fx-background-color: #f4f4f4;" text="Les Groupes" textFill="#4183d7">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <effect>
+                  <Glow level="0.24" />
+               </effect>
+            </Label>
+            <TableView fx:id="tabGroup" layoutX="265.0" layoutY="143.0" onMouseClicked="#rowClick" prefHeight="246.0" prefWidth="482.0">
+              <columns>
+                  <TableColumn fx:id="columnID" editable="false" prefWidth="95.0" resizable="false" sortable="false" text="ID" visible="false" />
+                <TableColumn fx:id="colNomG" prefWidth="232.0" text="Intitule De Groupe" />
+                  <TableColumn fx:id="colAcroG" minWidth="0.0" prefWidth="141.0" text="AcroGroupe " />
+                  <TableColumn fx:id="colNbrCher" prefWidth="113.0" text="Nbr chercheur" />
+              </columns>
+            </TableView>
+            <Separator layoutX="236.0" layoutY="22.0" orientation="VERTICAL" prefHeight="408.0" prefWidth="3.0" />
+            <Label layoutX="299.0" layoutY="112.0" prefHeight="17.0" prefWidth="51.0" text="Email :" />
+            <Label layoutX="295.0" layoutY="69.0" prefHeight="17.0" prefWidth="80.0" text=" Responsable :" />
+            <Label fx:id="lb_res" layoutX="375.0" layoutY="69.0" prefHeight="17.0" prefWidth="177.0" />
+            <JFXButton fx:id="boutonAjoutRespo" layoutX="553.0" layoutY="402.0" onAction="#btn_responsable" prefHeight="35.0" prefWidth="149.0" ripplerFill="#111111" style="-fx-background-color: #4183d7;" text="Affecter chef de groupe" textFill="WHITE" />
+            <JFXButton layoutX="310.0" layoutY="402.0" onAction="#btn_ajout_cherch" prefHeight="35.0" prefWidth="169.0" style="-fx-background-color: #4183d7;" text="        Ajouter Des Chercheurs" textFill="WHITE" />
+            <ImageView fitHeight="25.0" fitWidth="21.0" layoutX="314.0" layoutY="409.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/764773-200.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lb_id_equip" layoutX="270.0" layoutY="33.0" text="Label" visible="false" />
+            <JFXButton fx:id="boutonModifiRes" layoutX="676.0" layoutY="45.0" onAction="#btn_modifi_respo" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: #4183d7;" text="Modifier" textFill="WHITE" />
+            <Label fx:id="lb_email" layoutX="350.0" layoutY="112.0" prefHeight="17.0" prefWidth="169.0" />
+            <JFXButton fx:id="boutonSuppRespo1" layoutX="676.0" layoutY="77.0" onAction="#btn_supp_respo" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: #4183d7;" text="Supprimer" textFill="WHITE" />
+            <Label layoutX="541.0" layoutY="112.0" prefHeight="17.0" prefWidth="27.0" text="Tel :" />
+            <Label fx:id="lb_tel" layoutX="578.0" layoutY="112.0" prefHeight="17.0" prefWidth="107.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

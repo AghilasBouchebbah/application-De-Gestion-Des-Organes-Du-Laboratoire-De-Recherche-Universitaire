@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.BoxBlur?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="457.0" prefWidth="781.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Personnelcntrl">
+   <children>
+      <JFXComboBox fx:id="cm_type_pe" layoutX="23.0" layoutY="74.0" prefHeight="30.0" prefWidth="189.0" promptText="Type" />
+      <JFXTextField fx:id="txt_nom_pe" labelFloat="true" layoutX="23.0" layoutY="117.0" prefHeight="30.0" prefWidth="189.0" promptText="Nom" />
+      <JFXTextField fx:id="txt_pre_pe" labelFloat="true" layoutX="20.0" layoutY="165.0" prefHeight="30.0" prefWidth="189.0" promptText="Prénom" />
+      <Label layoutX="14.0" layoutY="4.0" prefHeight="59.0" prefWidth="178.0" text="Personnel" textFill="#4183d7">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <JFXDatePicker fx:id="dt_embo_pe" defaultColor="#4183d7" layoutX="18.0" layoutY="229.0" prefHeight="25.0" prefWidth="189.0" promptText="Date d'embauchement" />
+      <JFXButton fx:id="btn_modi_pe" layoutX="14.0" layoutY="359.0" onAction="#actionmodi" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: #4183d7;" text="Modifier" textFill="WHITE" />
+      <JFXButton fx:id="btn_ajou_pe" layoutX="14.0" layoutY="316.0" onAction="#actionajou" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: #4183d7;" text="Ajouter" textFill="WHITE" />
+      <JFXButton fx:id="btn_ann_pe" layoutX="201.0" layoutY="316.0" onAction="#actionannuler" prefHeight="37.0" prefWidth="51.0" style="-fx-background-color: #4183d7;" text="Vider" textFill="#fcfafa">
+         <effect>
+            <BoxBlur width="0.0">
+               <input>
+                  <Shadow />
+               </input>
+            </BoxBlur>
+         </effect></JFXButton>
+      <TableView fx:id="tabper" layoutX="283.0" layoutY="93.0" prefHeight="329.0" prefWidth="491.0">
+        <columns>
+          <TableColumn fx:id="col_id" prefWidth="75.0" text="id" visible="false" />
+            <TableColumn fx:id="col_type_pe" prefWidth="107.0" text="Type" />
+            <TableColumn fx:id="col_nom_pe" prefWidth="117.0" text="Nom" />
+            <TableColumn fx:id="col_pren_pe" prefWidth="119.0" text="Prénom" />
+            <TableColumn fx:id="col_dateembo_pe" prefWidth="147.0" text="Date embauchement" />
+        </columns>
+      </TableView>
+      <JFXTextField fx:id="txt_rech_pe" layoutX="354.0" layoutY="51.0" onInputMethodTextChanged="#recherchetxt" onKeyReleased="#recherchetxt" prefHeight="30.0" prefWidth="189.0" promptText="Recherche" />
+      <ImageView fitHeight="19.0" fitWidth="19.0" layoutX="327.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/closer-1297401_960_720.png" />
+         </image>
+      </ImageView>
+      <Separator layoutX="272.0" layoutY="-2.0" orientation="VERTICAL" prefHeight="457.0" prefWidth="13.0" />
+      <JFXButton fx:id="btn_supp_pe" layoutX="14.0" layoutY="397.0" onAction="#actionsupprimer" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: #4183d7;" text="Supprimer" textFill="#fffefe" />
+      <ImageView fitHeight="17.0" fitWidth="19.0" layoutX="20.0" layoutY="323.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/764773-200.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="17.0" fitWidth="19.0" layoutX="22.0" layoutY="366.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/Octicons-sync.svg.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="17.0" fitWidth="19.0" layoutX="15.0" layoutY="403.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/121113.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="430.0" layoutY="18.0" prefHeight="30.0" prefWidth="252.0" text="Liste de Personnel du LaMOS" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txt_id_pe" layoutX="23.0" layoutY="53.0" prefHeight="25.0" prefWidth="178.0" visible="false" />
+   </children>
+</AnchorPane>

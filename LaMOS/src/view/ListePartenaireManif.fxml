@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="loadPane" prefHeight="429.0" prefWidth="530.0" style="-fx-border-color: #4183d7; -fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ListepartenaireManifController">
+   <children>
+      <Label layoutX="153.0" layoutY="1.0" prefHeight="27.0" prefWidth="260.0" text="Liste de Partenaires du LaMOS">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <effect>
+            <Glow level="0.24" />
+         </effect>
+      </Label>
+      <TableView fx:id="listePartenaire" layoutX="19.0" layoutY="78.0" prefHeight="294.0" prefWidth="489.0">
+        <columns>
+          <TableColumn fx:id="colidpartenaire" prefWidth="46.0" text="id" visible="false" />
+          <TableColumn fx:id="coltype_partenaire" prefWidth="84.0" text="type_partenaire" />
+            <TableColumn fx:id="colInitulé" prefWidth="60.0" text="Intitulé" />
+            <TableColumn fx:id="colDomaine" prefWidth="76.0" text="Domaine" />
+            <TableColumn fx:id="coldate_creation" prefWidth="88.0" text="Date creation" />
+            <TableColumn fx:id="colcoord" prefWidth="113.0" text="Coordonnées partenaire" />
+            <TableColumn fx:id="colTarif" minWidth="0.0" prefWidth="67.0" text="Tarif" />
+        </columns>
+      </TableView>
+      <JFXComboBox fx:id="type_part" layoutX="25.0" layoutY="39.0" prefHeight="30.0" prefWidth="155.0" promptText="Type-partenaire">
+         <effect>
+            <Glow level="0.22" />
+         </effect></JFXComboBox>
+      <JFXButton layoutX="189.0" layoutY="39.0" onAction="#handRechercher" prefHeight="30.0" prefWidth="76.0" style="-fx-background-color: #DADFE1;" text="Rechercher">
+         <font>
+            <Font name="Segoe UI" size="12.0" />
+         </font>
+         <effect>
+            <Glow level="0.23" />
+         </effect>
+      </JFXButton>
+      <JFXButton alignment="TOP_RIGHT" layoutX="435.0" layoutY="374.0" onAction="#handvalider" prefHeight="30.0" prefWidth="76.0" style="-fx-background-color: #DADFE1;" text="Valider">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <effect>
+            <Glow level="0.23" />
+         </effect>
+      </JFXButton>
+      <JFXButton layoutX="19.0" layoutY="374.0" onAction="#handNouveau" prefHeight="30.0" prefWidth="76.0" style="-fx-background-color: #DADFE1;" text="Nouveau">
+         <effect>
+            <Glow level="0.23" />
+         </effect></JFXButton>
+      <ImageView fitHeight="23.0" fitWidth="13.0" layoutX="441.0" layoutY="383.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../mesImages/1463515516bleu_check.png" />
+         </image>
+      </ImageView>
+      <JFXTextField fx:id="txtidpart" layoutX="371.0" layoutY="404.0" prefHeight="25.0" prefWidth="64.0" promptText="Id_part" visible="false" />
+      <JFXTextField fx:id="txtidm" layoutX="294.0" layoutY="404.0" prefHeight="25.0" prefWidth="64.0" promptText="id_manifest" visible="false" />
+      <JFXButton layoutX="429.0" layoutY="39.0" onAction="#HandRefrcher" prefHeight="30.0" prefWidth="76.0" style="-fx-background-color: #DADFE1;" text="Refrech">
+         <font>
+            <Font name="Segoe UI" size="12.0" />
+         </font>
+         <effect>
+            <Glow level="0.23" />
+         </effect>
+      </JFXButton>
+      <Label fx:id="labelpart" alignment="TOP_CENTER" layoutX="503.0" layoutY="-1.0" onMouseClicked="#Closepart" onMouseEntered="#setClose" onMouseExited="#setDefaultclose" prefHeight="13.0" prefWidth="27.0" text="x" visible="false">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

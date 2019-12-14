@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" onInputMethodTextChanged="#onkey" onKeyReleased="#onkey" prefHeight="457.0" prefWidth="781.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ImprimantessController">
+   <children>
+      <Label alignment="CENTER" layoutX="339.0" prefHeight="50.0" prefWidth="358.0" text="Liste des équipements-imprimante">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtMarqimprim" layoutX="14.0" layoutY="82.0" prefHeight="39.0" prefWidth="227.0" promptText="Marque_imprimente">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtPRIXimprim" layoutX="14.0" layoutY="146.0" prefHeight="39.0" prefWidth="227.0" promptText="Prix_imprimente" />
+      <JFXButton fx:id="buttonAjimpri" alignment="CENTER_RIGHT" layoutX="11.0" layoutY="338.0" onAction="#ajoutimprim" prefHeight="30.0" prefWidth="95.0" style="-fx-background-color: #4183d7;" text="Ajouter" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="buttMODimprim" alignment="CENTER_RIGHT" layoutX="11.0" layoutY="380.0" onAction="#modimprom" prefHeight="30.0" prefWidth="95.0" style="-fx-background-color: #4183d7;" text="Modifier" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="buttsuppimprim" alignment="CENTER_RIGHT" layoutX="11.0" layoutY="418.0" onAction="#supprimimprim" prefHeight="30.0" prefWidth="95.0" style="-fx-background-color: #4183d7;" text="Supprimer" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI" size="15.0" />
+         </font>
+      </JFXButton>
+      <TableView fx:id="tablimprim" layoutX="289.0" layoutY="112.0" onMouseClicked="#selectionner" prefHeight="305.0" prefWidth="487.0">
+         <columns>
+            <TableColumn fx:id="idimprimente" prefWidth="108.0" text="idEquipement" visible="false" />
+            <TableColumn fx:id="Marqueimprimente" minWidth="9.0" prefWidth="122.0" text="Marque_imprimente" />
+            <TableColumn fx:id="priximprim" prefWidth="113.0" text="prix_imprimente" />
+            <TableColumn fx:id="dateachatimpri" minWidth="0.0" prefWidth="138.0" text="date_achat_imprimente" />
+            <TableColumn fx:id="etatimprim" prefWidth="113.0" text="Etat_imprimente" />
+         </columns>
+      </TableView>
+      <JFXTextField fx:id="txtrech" layoutX="316.0" layoutY="67.0" onAction="#actionrech" prefHeight="30.0" prefWidth="139.0" promptText="Rechercher-ici">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <Label alignment="CENTER" layoutX="-1.0" layoutY="25.0" prefHeight="50.0" prefWidth="281.0" text=" Les informations Imprimante">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <JFXDatePicker fx:id="txtdatAchatimprim" defaultColor="#4183d7" layoutX="14.0" layoutY="218.0" prefHeight="39.0" prefWidth="227.0" promptText="Date_achat_imprimente" />
+      <Separator layoutX="275.0" orientation="VERTICAL" prefHeight="457.0" prefWidth="14.0" />
+      <Separator layoutX="-1.0" layoutY="74.0" prefHeight="3.0" prefWidth="281.0" />
+      <JFXComboBox fx:id="cometatimprim" layoutX="14.0" layoutY="276.0" prefHeight="39.0" prefWidth="227.0" promptText="L'état_imprimente" />
+      <Label fx:id="labimprimclose" alignment="CENTER" layoutX="757.0" layoutY="3.0" onMouseClicked="#closeInterf" onMouseEntered="#SetCloseInterf" onMouseExited="#setDfClose" prefHeight="21.0" prefWidth="20.0" text="X">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="17.0" fitWidth="14.0" layoutX="298.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Icons/rech.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="9.0" layoutY="422.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Icons/supp.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="21.0" layoutX="15.0" layoutY="383.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Icons/mod.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="19.0" layoutY="343.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Icons/ajout.png" />
+         </image>
+      </ImageView>
+      <Separator layoutY="23.0" prefHeight="3.0" prefWidth="281.0" />
+      <JFXButton fx:id="VIDER" layoutX="208.0" layoutY="418.0" onAction="#VIDER" prefHeight="30.0" prefWidth="66.0" style="-fx-background-color: #4183d7;" text="Vider" textFill="#f8efef" />
+   </children>
+</AnchorPane>

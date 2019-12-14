@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="404.0" prefWidth="597.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewParticipantController">
+   <children>
+      <Label layoutX="137.0" layoutY="6.0" prefHeight="30.0" prefWidth="345.0" text="Liste des Participants Aux Manifestations" textFill="#2f84b5">
+         <font>
+            <Font name="Segoe UI Bold" size="17.0" />
+         </font>
+         <effect>
+            <Glow level="0.22" />
+         </effect>
+      </Label>
+      <Label fx:id="labelparticipe" alignment="CENTER" layoutX="568.0" layoutY="-1.0" onMouseClicked="#Closeparticipe" onMouseEntered="#Setclosep" onMouseExited="#setDefaultcloseprt" prefHeight="30.0" prefWidth="31.0" style="-fx-background-color: white; -fx-border-color: #4183d7;" text="X" textAlignment="RIGHT" visible="false">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <TableView fx:id="listeparticipant" layoutX="12.0" layoutY="72.0" prefHeight="297.0" prefWidth="561.0">
+         <columns>
+            <TableColumn fx:id="colidManifest" prefWidth="88.0" text="idManifest" visible="false" />
+            <TableColumn fx:id="colType_manif" prefWidth="90.0" text="Type_Manif" visible="false" />
+            <TableColumn fx:id="colintitule" prefWidth="84.0" text="Intitulé" visible="false" />
+            <TableColumn fx:id="collieu_org" prefWidth="78.0" text="Lieu_org" visible="false" />
+            <TableColumn fx:id="colheure_org" prefWidth="82.0" text="heure_org" visible="false" />
+            <TableColumn fx:id="coldate_org" minWidth="0.0" prefWidth="75.0" text="Date_org" visible="false" />
+            <TableColumn fx:id="colresume" minWidth="0.0" prefWidth="87.0" text="Resumé" visible="false" />
+            <TableColumn fx:id="colidpartenaire" prefWidth="170.0" text="id" visible="false" />
+            <TableColumn fx:id="coltype_partenaire" minWidth="0.0" prefWidth="100.0" text="type" />
+            <TableColumn fx:id="colInitulé" minWidth="0.0" prefWidth="120.0" text="Intitulé" />
+            <TableColumn fx:id="colDomaine" minWidth="0.0" prefWidth="110.0" text="Domaine" />
+            <TableColumn fx:id="coldate_creation" minWidth="0.0" prefWidth="87.0" text="Date creation" visible="false" />
+            <TableColumn fx:id="colcoord" minWidth="0.0" prefWidth="146.0" text="Coordonnées partenaire" />
+            <TableColumn fx:id="colTarif" minWidth="0.0" prefWidth="125.0" text="Tarif" />
+         </columns>
+      </TableView>
+      <JFXTextField fx:id="Searchparticipant" layoutX="31.0" layoutY="40.0" onInputMethodTextChanged="#searchparticipe" onKeyReleased="#searchparticipe" prefHeight="25.0" prefWidth="126.0" promptText="Rechercher ici" />
+      <ImageView fitHeight="15.0" fitWidth="14.0" layoutX="14.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../mesImages/closer-1297401_960_720.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
